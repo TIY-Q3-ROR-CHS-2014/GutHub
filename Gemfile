@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
-gem 'haml-rails'
+gem 'haml-rails', '~> 0.5.3'
 gem 'workflow'
 gem 'quiet_assets'
 # Use SCSS for stylesheets
