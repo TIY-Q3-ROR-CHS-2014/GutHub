@@ -8,3 +8,6 @@
 
 
 # rake db:seed
+
+# breweries = Brewery.create([{name: '<brewery_name', description: '<brief_descriptiion'}, {name: '<brewery_name', description: '<brief_descriptiion'}, {name: '<brewery_name', description: '<brief_descriptiion'}, {name: '<brewery_name', description: '<brief_descriptiion'}, {name: '<brewery_name', description: '<brief_descriptiion'}])
+# beverages = Beverage.create([{name: '<beverage_name>', volume: a_float, abv: a_float, price: a_float, brewery_id: an_integer}, {name: '<beverage_name>', volume: a_float, abv: a_float, price: a_float, brewery_id: an_integer}, {name: '<beverage_name>', volume: a_float, abv: a_float, price: a_float, brewery_id: an_integer}, {name: '<beverage_name>', volume: a_float, abv: a_float, price: a_float, brewery_id: an_integer}])
