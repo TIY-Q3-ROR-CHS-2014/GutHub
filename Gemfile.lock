@@ -124,7 +124,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
-  haml-rails
+  haml-rails (~> 0.5.3)
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
