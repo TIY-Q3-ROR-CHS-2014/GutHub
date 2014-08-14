@@ -29,14 +29,14 @@ class BeveragesController < ApplicationController
     @brewery = find_brew
     @beverage = find_beverage
     @beverage.update_attributes beverage_params
-    redirect_to root_path
+    redirect_to brewery_beverage_path(@brewery, @beverage)
   end
 
   def destroy
     @brewery = find_brew
     @beverage = find_beverage
     @beverage.delete
-    redirect_to root_path
+    redirect_to brewery_beverages_path(@brewery)
   end
 
 private
