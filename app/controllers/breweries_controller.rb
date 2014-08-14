@@ -22,8 +22,7 @@ class BreweriesController < ApplicationController
 
 private
 
-  def find_brew
-    
+  def find_breweries
   end
 
 end
