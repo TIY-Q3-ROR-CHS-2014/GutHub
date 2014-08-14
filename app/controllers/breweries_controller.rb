@@ -22,7 +22,7 @@ class BreweriesController < ApplicationController
 
 private
 
-  def find_hospital
+  def find_breweries
     
   end
 
