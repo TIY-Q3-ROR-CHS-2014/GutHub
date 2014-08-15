@@ -1,0 +1,7 @@
+%h1 westbrook
+= link_to "Home", root_path
+%hr/
+
+- @beverage.each do |beverage|
+  %ol
+    = beverage.name 

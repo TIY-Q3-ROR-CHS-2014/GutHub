@@ -11,3 +11,8 @@
 
 # breweries = Brewery.create([{name: '<brewery_name', description: '<brief_descriptiion'}, {name: '<brewery_name', description: '<brief_descriptiion'}, {name: '<brewery_name', description: '<brief_descriptiion'}, {name: '<brewery_name', description: '<brief_descriptiion'}, {name: '<brewery_name', description: '<brief_descriptiion'}])
 # beverages = Beverage.create([{name: '<beverage_name>', volume: a_float, abv: a_float, price: a_float, brewery_id: an_integer}, {name: '<beverage_name>', volume: a_float, abv: a_float, price: a_float, brewery_id: an_integer}, {name: '<beverage_name>', volume: a_float, abv: a_float, price: a_float, brewery_id: an_integer}, {name: '<beverage_name>', volume: a_float, abv: a_float, price: a_float, brewery_id: an_integer}])
+breweries = Brewery.create(name: 'Westbrook Brewing', description: 'Westbrook Brewing is a craft brewery in Mt. Pleasant, SC. Our mission is to make the most interesting, drinkable, and generally awesome beer possible. We love experimenting with different ingredients and brewing techniques, and we hope you’ll have as much fun drinking our beer as we do making it.')
+beverages = Beverage.create([
+  {name: 'One Claw Rye Pale Ale', volume: 12, abv: 5.5, price: 0.0, brewery_id: 1},
+  {name: 'White Thai', volume: 12, abv: 5.0, price: 0.0, brewery_id: 1},
+  {name: 'IPA', volume: 12, abv: 6.8, price: 0.0, brewery_id: 1}])
