@@ -1,42 +1,36 @@
 class BeveragesController < ApplicationController
+  before_action :find_brewery, only: [:show, :index, :new, :create, :edit, :update, :destroy]
 
   def show
-    @brewery = find_brew
     @beverage = find_beverage
   end
 
   def index
-    @brewery = find_brew
-    @beverage = Beverage.find.all
+    @beverage = @brewery.beverages.all
   end
 
   def new
-    @brewery = find_brew
     @beverage = Beverage.new
   end
 
   def create
-    @brewery = find_brew
     @beverage = @brewery.beverages.new(beverage_params)
   end
 
   def edit
-    @brewery = find_brew
     @beverage = find_beverage
   end
 
   def update
-    @brewery = find_brew
     @beverage = find_beverage
     @beverage.update_attributes beverage_params
-    redirect_to root_path
+    redirect_to brewery_beverage_path(@brewery, @beverage)
   end
 
   def destroy
-    @brewery = find_brew
     @beverage = find_beverage
     @beverage.delete
-    redirect_to root_path
+    redirect_to brewery_beverages_path(@brewery)
   end
 
 private
@@ -45,7 +39,7 @@ private
     @beverage = Beverage.find params[:id]
   end
 
-  def find_brew
+  def find_brewery
     @brewery = Brewery.find params[:brewery_id]
   end
 

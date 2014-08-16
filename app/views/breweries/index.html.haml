@@ -1,0 +1,9 @@
+%h1 breweries
+= link_to "home", root_path
+%hr/
+
+- @brewery.each do |brewery|
+  %ol
+    = link_to brewery.name, brewery_beverages_path(brewery, @beverage)
+    %br/
+    = brewery.description
