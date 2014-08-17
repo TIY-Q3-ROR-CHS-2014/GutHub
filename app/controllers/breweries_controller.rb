@@ -1,11 +1,11 @@
 class BreweriesController < ApplicationController
+  before_action :find_brewery, only: [:show, :edit, :update, :destroy]
 
   def show
-    @brewery = find_breweries
   end
 
   def index
-    @brewery = Brewery.all
+    @breweries = Brewery.all
   end
 
   def new
@@ -22,17 +22,14 @@ class BreweriesController < ApplicationController
   end
 
   def edit
-    @brewery = find_breweries
   end
 
-  def update
-    @brewery = find_breweries
+  def update    
     @brewery.update_attributes brewery_params
     redirect_to brewery_path(@brewery)
   end
 
   def destroy
-    @brewery = find_breweries
     @brewery.delete
     redirect_to breweries_path
   end
@@ -43,7 +40,7 @@ private
     params.require(:brewery).permit(:name, :description)
   end
 
-  def find_breweries
+  def find_brewery
     @brewery = Brewery.find params[:id]
   end
 
