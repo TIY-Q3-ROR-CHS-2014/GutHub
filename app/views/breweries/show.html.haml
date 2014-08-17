@@ -1,22 +1,16 @@
-%h1 Show Brewery
 %strong
-  Name:
-= @brewery.name
+  = @brewery.name
 %br
 %strong
   Description
 = @brewery.description
 %br
-= link_to "Create Beverage", new_brewery_beverage_path(@brewery)
 %ul
   /= @brewery.beverages.inspect
   - @brewery.beverages.each do |beverage|
     %li
       = link_to "#{beverage.name} | #{@brewery.name}", brewery_beverage_path(@brewery, beverage)
-      |
-      = link_to "Edit", edit_brewery_beverage_path(@brewery, beverage)
-      |
-      = link_to "Delete", brewery_beverage_path(@brewery, beverage), method: :delete
-
 %br
-= link_to "Back", breweries_path
+= link_to "Add a beverage to #{@brewery.name}'s menu!", new_brewery_beverage_path(@brewery)
+%br
+= link_to "Back to PubCrawler Breweries", breweries_path

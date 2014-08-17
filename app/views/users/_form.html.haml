@@ -1,0 +1,41 @@
+= form_for @user do |f|
+  - if  f.object.errors.messages.length > 0
+    / Renders errors to user
+    - f.object.errors.messages.inspect
+    %br/
+    - f.object.errors.messages.each do |key, value|
+      - value.each do |message|
+        = key.capitalize
+        = message
+  = f.label :name
+  = f.text_field :name
+  %br
+  = f.radio_button :gender, 'Male', :checked => true
+  = label :gender_male, 'Male'
+  = f.radio_button :gender, 'Female'
+  = label :gender_female, 'Female'
+  %br
+  = f.label :weight
+  = f.number_field :weight, :value => 100
+  %br
+  = f.label :bio
+  = f.text_field :bio
+  %br
+  %h1 Select Your Favorite Beers!
+  %br
+  %ul
+  - @breweries.each do |brewery|
+    %li
+      %strong
+        = link_to brewery.name, brewery_path(brewery)
+      = brewery.description
+      %br
+      -brewery.beverages.each do |beverage|
+        = check_box_tag 'user[beverage_ids][]', beverage.id, @user.beverages.include?(beverage) 
+        = beverage.name
+        |
+        = beverage.abv
+        |
+        = beverage.price
+        %br
+  = f.submit "Register!"
