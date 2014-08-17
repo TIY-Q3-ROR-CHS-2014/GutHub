@@ -1,0 +1,22 @@
+%p
+  %strong Name:
+  = @beverage.name
+%p
+  %strong Serving Size (oz):
+  = @beverage.volume
+%p
+  %strong % Alcohol by volume:
+  = @beverage.abv
+%p
+  %strong % Price ($):
+  = @beverage.price
+%p
+  %strong Brewery:
+  - if @beverage.brewery
+    = link_to @brewery.try(:name), brewery_path(@brewery)
+%p
+  %strong Fans of this Beer!
+  %ul
+    - @beverage.users.each do |x|
+      %li= x.name
+= link_to 'Back', brewery_path(@brewery)

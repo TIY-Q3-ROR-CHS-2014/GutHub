@@ -1,0 +1,16 @@
+%strong
+  = @brewery.name
+%br
+%strong
+  Description
+= @brewery.description
+%br
+%ul
+  /= @brewery.beverages.inspect
+  - @brewery.beverages.each do |beverage|
+    %li
+      = link_to "#{beverage.name} | #{@brewery.name}", brewery_beverage_path(@brewery, beverage)
+%br
+= link_to "Add a beverage to #{@brewery.name}'s menu!", new_brewery_beverage_path(@brewery)
+%br
+= link_to "Back to PubCrawler Breweries", breweries_path

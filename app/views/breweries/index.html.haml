@@ -1,9 +1,25 @@
-%h1 breweries
-= link_to "home", root_path
-%hr/
+/ %h1 breweries
+/ = link_to "home", root_path
+/ %hr/
 
-- @brewery.each do |brewery|
-  %ol
-    = link_to brewery.name, brewery_beverages_path(brewery, @beverage)
-    %br/
-    = brewery.description
+/ - @brewery.each do |brewery|
+/   %ol
+/     = link_to brewery.name, brewery_beverages_path(brewery, @beverage)
+/     %br/
+/     = brewery.description
+
+%h1 Breweries
+
+= link_to "Create Brewery", new_brewery_path
+%ul
+  - @breweries.each do |brewery|
+    %li
+      %strong
+        = link_to brewery.name, brewery_path(brewery)
+      = brewery.description
+      |
+      = link_to "Edit", edit_brewery_path(brewery)
+      |
+      = link_to "Delete", brewery_path(brewery), method: :delete
+= link_to "Back", root_path
+
