@@ -19,6 +19,41 @@
   <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %></div>
 
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br/>
+  <%= f.radio_button :gender, 'Male', :checked => true %>
+  <%= label :gender_male, 'Male' %>
+  <%= f.radio_button :gender, 'Female' %>
+  <%= label :gender_female, 'Female' %>
+  <br/>
+  <%= f.label :weight %>
+  <%= f.number_field :weight, :value => 100 %>
+  <br/>
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+  <br/>
+  <h1>Select Your Favorite Beers!</h1>
+  <br/>
+  <ul></ul>
+  <% Brewery.all.each do |brewery| %>
+    <li>
+      <strong>
+        <%= link_to brewery.name, brewery_path(brewery) %>
+      </strong>
+      <%= brewery.description %>
+      <br/>
+      <% brewery.beverages.each do |beverage| %>
+        <%= check_box_tag 'user[beverage_ids][]', beverage.id, current_user.beverages.include?(beverage)  %>
+        <%= beverage.name %>
+        |
+        <%= beverage.abv %>
+        |
+        <%= beverage.price %>
+        <br/>
+      <% end %>
+    </li>
+  <% end %>
   <div><%= f.submit "Update" %></div>
 <% end %>
 
