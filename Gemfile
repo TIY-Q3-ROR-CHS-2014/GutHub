@@ -8,6 +8,7 @@ gem 'mysql2'
 gem 'haml-rails', '~> 0.5.3'
 gem 'workflow'
 gem 'quiet_assets'
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
