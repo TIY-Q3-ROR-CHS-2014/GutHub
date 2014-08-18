@@ -1,4 +1,4 @@
-= form_for @user do |f|
+= form_for current_user do |f|
   - if  f.object.errors.messages.length > 0
     / Renders errors to user
     - f.object.errors.messages.inspect
@@ -31,7 +31,7 @@
       = brewery.description
       %br
       -brewery.beverages.each do |beverage|
-        = check_box_tag 'user[beverage_ids][]', beverage.id, @user.beverages.include?(beverage) 
+        = check_box_tag 'user[beverage_ids][]', beverage.id, current_user.beverages.include?(beverage) 
         = beverage.name
         |
         = beverage.abv
