@@ -18,6 +18,7 @@
   position:relative;
   bottom:-1000px;
   transition: bottom .8s ease;
+   color: white;
 }
 .move {
   bottom: 0;

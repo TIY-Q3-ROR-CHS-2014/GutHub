@@ -1,3 +1,19 @@
+%script{:src => "http://leaverou.github.io/prefixfree/prefixfree.min.js", :type => "text/javascript"}
+%section
+  #action
+    #keg
+      #pipe-handle
+      #pipe
+      #pipe-front
+    .glass
+      .beer
+      .handle
+        .top-right
+        .bottom-right
+      .front-glass
+%h1.choose
+  Brews
+%nav
 %p
   %strong Name:
   = @beverage.name
@@ -20,3 +36,4 @@
     - @beverage.users.each do |x|
       %li= x.name
 = link_to 'Back', brewery_path(@brewery)
+  .hidden
