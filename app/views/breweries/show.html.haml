@@ -1,3 +1,19 @@
+%script{:src => "http://leaverou.github.io/prefixfree/prefixfree.min.js", :type => "text/javascript"}
+%section
+  #action
+    #keg
+      #pipe-handle
+      #pipe
+      #pipe-front
+    .glass
+      .beer
+      .handle
+        .top-right
+        .bottom-right
+      .front-glass
+%h1.choose
+  Breweries
+%nav
 %strong
   = @brewery.name
 %br
@@ -14,3 +30,4 @@
 / = link_to "Add a beverage to #{@brewery.name}'s menu!", new_brewery_beverage_path(@brewery)
 / %br
 = link_to "Back to PubCrawler Breweries", breweries_path
+  .hidden
