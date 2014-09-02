@@ -18,7 +18,7 @@
 $(function() {
   
   $(".choose").on("click", function(event) {
-    
+  	console.log($("nav"))
     $("nav").toggleClass("move");
     
   });

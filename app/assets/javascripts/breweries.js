@@ -1,9 +1,9 @@
-$(function() {
+// $(function() {
   
-  $(".choose").on("click", function(event) {
+//   $(".choose").on("click", function(event) {
     
-    $("nav").toggleClass("move");
+//     $("nav").toggleClass("move");
     
-  });
+//   });
   
-});
+// });
