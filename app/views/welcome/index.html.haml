@@ -1,20 +1,76 @@
-%script{:src => "http://leaverou.github.io/prefixfree/prefixfree.min.js", :type => "text/javascript"}
-%section
-  #action
-    #keg
-      #pipe-handle
-      #pipe
-      #pipe-front
-    .glass
-      .beer
-      .handle
-        .top-right
-        .bottom-right
-      .front-glass
-%h1.choose
-  Pub_Crawler
-%nav
-  .hidden
-    = link_to "PubCrawler Breweries List", breweries_path
-    %br
-    = link_to "Edit your Profile!", users_edit_path
+!!!
+%html
+  %head
+    %title GutHub
+    %link{:href => "/assets/welcome.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/assets/welcome.js", :rel => "javascript"} 
+    / Header with Navigation
+#header
+  %nav.navbar.navbar-inverse{:role => "navigation"}
+    .container-fluid
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header
+        %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "#home"} PubCrawler
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li.active
+            %a{:href => "#breweries"} Breweries
+          %li
+            %a{:href => "#beverages"} Beverages
+          %li
+            %a{:href => "#calculator"} Calculator
+        %ul.nav.navbar-nav.navbar-right
+          %ul.nav.navbar-nav
+            %li.active
+              - if user_signed_in?
+                = content_tag(:a, current_user.email)
+              - else
+                = link_to "Log In", new_user_session_path
+            %li.dropdown
+              %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                User Profile
+                %span.caret
+              %ul.dropdown-menu{:role => "menu"}
+                %li
+                  = link_to "Edit Profile", edit_user_registration_path
+                %li
+                  = link_to "Log Out", destroy_user_session_path, method: :delete  
+%body
+#home.content
+  .carousel
+    .container
+      .row-carousel
+        .col-sm-10.col-sm-offset-1
+          #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
+            .carousel-inner
+              .item.active
+                %img{:alt => "main", :src => "assets/beertype.png"}/
+              .item.sixpack
+                %img{:alt => "skate", :src => "assets/sixpack.jpg"}/
+            %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic", :role => "button"}
+              %span.glyphicon.glyphicon-chevron-left
+            %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic", :role => "button"}
+              %span.glyphicon.glyphicon-chevron-right
+          .row-indicator        
+            %ol.carousel-indicators
+              %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+              %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+#breweries.panel
+  .content
+#beverages.panel
+  .content
+    / ...
+/ /About
+/ Contact
+#calculator.panel
+  .content
+
+    / ...
+
+

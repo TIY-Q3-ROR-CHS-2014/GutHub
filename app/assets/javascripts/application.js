@@ -12,15 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap.min
 //= require_tree .
 
-$(function() {
-  
-  $(".choose").on("click", function(event) {
-  	console.log($("nav"))
-    $("nav").toggleClass("move");
-    
-  });
-  
-});
