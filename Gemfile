@@ -10,6 +10,13 @@ gem 'workflow'
 gem 'quiet_assets'
 gem 'devise'
 # Use SCSS for stylesheets
+group :development, :test do
+	gem 'rspec-rails', '~> 3.0.0'
+	gem 'shoulda-matchers'
+	gem 'capybara', '~> 2.4.1'
+	gem 'selenium-webdriver'
+	gem 'database_cleaner'
+end
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
