@@ -51,8 +51,10 @@
             .carousel-inner
               .item.active
                 %img{:alt => "main", :src => "assets/beertype.png"}/
-              .item.sixpack
-                %img{:alt => "skate", :src => "assets/sixpack.jpg"}/
+              .item.taps
+                %img{:alt => "skate", :src => "assets/taps.png"}/
+              .item.type2
+                %img{:alt => "skate", :src => "assets/beertype2.png"}/
             %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic", :role => "button"}
               %span.glyphicon.glyphicon-chevron-left
             %a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic", :role => "button"}
@@ -63,11 +65,22 @@
               %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
 #breweries.panel
   .content
+    %ul
+      - @breweries.each do |brewery|
+        %li
+          %strong
+            = link_to brewery.name, brewery_path(brewery)
+          = brewery.description
+          |
+          = link_to "Edit", edit_brewery_path(brewery)
+          |
+          = link_to "Delete", brewery_path(brewery), method: :delete
 #beverages.panel
   .content
-    / ...
-/ /About
-/ Contact
+    - @beverages.each do |beverage|
+      %ol
+        = beverage.name
+        = beverage.brewery.name
 #calculator.panel
   .content
 

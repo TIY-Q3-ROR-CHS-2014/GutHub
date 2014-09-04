@@ -5,10 +5,15 @@ body{
 	margin: 0 ;
 }
 
-.item.sixpack {
-	width: 100%;
+.item.taps {
+    width: 753px;
+    height: 391px;
 }
 
+.item.type2 {
+    width: 753px;
+    height: 391px;
+}
 .panel{
     min-width: 100%;
     height: 98%;
@@ -27,4 +32,4 @@ body{
 .panel:target{
     margin-top: 0%;
     background-color: #ffcb00;
-}
+};
