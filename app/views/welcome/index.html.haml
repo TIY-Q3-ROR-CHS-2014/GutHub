@@ -71,10 +71,7 @@
           %strong
             = link_to brewery.name, brewery_path(brewery)
           = brewery.description
-          |
-          = link_to "Edit", edit_brewery_path(brewery)
-          |
-          = link_to "Delete", brewery_path(brewery), method: :delete
+          
 #beverages.panel
   .content
     - @beverages.each do |beverage|
